@@ -23,7 +23,7 @@ class Grid extends QUI\Control
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -121,11 +121,17 @@ class Grid extends QUI\Control
      */
     protected function getSite(): QUI\Interfaces\Projects\Site
     {
-        if ($this->getAttribute('Site')) {
-            return $this->getAttribute('Site');
+        $Site = $this->getAttribute('Site');
+
+        if ($Site instanceof QUI\Interfaces\Projects\Site) {
+            return $Site;
         }
 
         $Site = QUI::getRewrite()->getSite();
+
+        if (!$Site instanceof QUI\Interfaces\Projects\Site) {
+            throw new QUI\Exception('No active site available.');
+        }
 
         $this->setAttribute('Site', $Site);
 

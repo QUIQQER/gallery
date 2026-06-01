@@ -23,7 +23,7 @@ class InfiniteCarousel extends QUI\Control
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -121,9 +121,13 @@ class InfiniteCarousel extends QUI\Control
         $images = [];
 
         if ($Folder instanceof Folder) {
-            $images = $Folder->getImages([
+            $folderImages = $Folder->getImages([
                 'order' => $order
             ]);
+
+            if (is_array($folderImages)) {
+                $images = $folderImages;
+            }
         }
 
 
@@ -236,11 +240,11 @@ class InfiniteCarousel extends QUI\Control
      *     --_qui-gallery-logoInfiniteCarousel--imgHeight: var(qui-gallery-logoInfiniteCarousel--imgHeight, 50px);
      *
      * @param string $name
-     * @param string $value
+     * @param string|int $value
      *
      * @return void
      */
-    private function setCustomVariable(string $name, string $value): void
+    private function setCustomVariable(string $name, string|int $value): void
     {
         if (!$name || !$value) {
             return;
