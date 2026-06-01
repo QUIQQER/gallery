@@ -20,7 +20,7 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
     return new Class({
 
         Extends: QUIControl,
-        Type   : 'package/quiqqer/gallery/bin/controls/GridAdvanced',
+        Type: 'package/quiqqer/gallery/bin/controls/GridAdvanced',
 
         Binds: [
             '$onImport',
@@ -29,18 +29,18 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
 
         options: {
             'titleclickable': 0, // 1 = open image
-            'randomorder'   : 0, // 1 = shuffle images and load asynchron
-            'max'           : 12 // max number of images, it works with random order
+            'randomorder': 0, // 1 = shuffle images and load asynchron
+            'max': 12 // max number of images, it works with random order
         },
 
         initialize: function (options) {
             this.parent(options);
 
-            this.$ImageWindow  = false;
+            this.$ImageWindow = false;
             this.$CompleteList = false;
 
             this.$__resized = false;
-            this.$images    = [];
+            this.$images = [];
 
             this.addEvents({
                 onImport: this.$onImport
@@ -51,46 +51,43 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
          * event on inject
          */
         $onImport: function () {
-            const self = this,
-                  Elm  = this.getElm();
+            const Elm = this.getElm();
 
-            var images = this.$Elm.getElements(
+            const images = Array.from(this.$Elm.querySelectorAll(
                 '.quiqqer-gallery-grid-entry-image, .quiqqer-control-gallery-grid-image, .quiqqer-control-gallery-gridAdvanced-image'
-            );
+            ));
 
 
             /*if (this.getAttribute('titleclickable')) {
-                var titles = this.$Elm.getElements(
+                const titles = Array.from(this.$Elm.querySelectorAll(
                     '.quiqqer-gallery-gridAdvanced-entry-text a'
                 );
 
                 images = images.concat(titles)
             }*/
 
-            for (var i = 0, len = images.length; i < len; i++) {
-                images[i].addEvent('click', this.$imageClick);
+            for (let i = 0, len = images.length; i < len; i++) {
+                images[i].addEventListener('click', this.$imageClick);
             }
 
             // get the complete list
-            var completeList = this.$Elm.getElement(
+            const completeList = this.$Elm.querySelector(
                 '.quiqqer-gallery-grid-list-complete'
             );
 
-            this.$CompleteList = new Element('div', {
-                html  : completeList.innerHTML.replace('<template>', '').replace('</template>', ''),
-                styles: {
-                    display: "none"
-                }
-            }).inject(this.$Elm);
+            this.$CompleteList = document.createElement('div');
+            this.$CompleteList.innerHTML = completeList.innerHTML.replace('<template>', '').replace('</template>', '');
+            this.$CompleteList.style.display = 'none';
+            this.$Elm.appendChild(this.$CompleteList);
 
-            this.$images = this.$CompleteList.getElements(
+            this.$images = Array.from(this.$CompleteList.querySelectorAll(
                 '.quiqqer-gallery-grid-list-complete-entry'
-            ).map(function (Elm) {
+            )).map(function (Elm) {
                 return {
-                    src     : Elm.get('data-src'),
+                    src: Elm.get('data-src'),
                     thumbSrc: Elm.get('data-thumb-src'),
-                    title   : Elm.getElement('.title').get('html'),
-                    short   : Elm.getElement('.short').get('html')
+                    title: Elm.querySelector('.title').innerHTML,
+                    short: Elm.querySelector('.short').innerHTML
                 };
             });
 
@@ -109,7 +106,7 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
 
             this.$shuffle(this.$images);
 
-            this.$images          = this.$images.slice(0, this.getAttribute('max'));
+            this.$images = this.$images.slice(0, this.getAttribute('max'));
             const imageContainers = Elm.querySelectorAll('.quiqqer-control-gallery-gridAdvanced-entry');
 
             imageContainers.forEach((Container, index) => {
@@ -131,7 +128,7 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
                 Img.setAttribute('width', 1200);
                 Img.setAttribute('loading', 'lazy');
                 Img.setAttribute('title', this.$images[index].title);
-                Img.setAttribute('src', this.$images[index].thumbSrc)
+                Img.setAttribute('src', this.$images[index].thumbSrc);
 
                 Img.addEventListener('load', () => {
                     Container.classList.add('hide');
@@ -142,10 +139,10 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
                         Container.classList.remove('skeletonLoadingEffect');
                         Container.classList.remove('hide');
                     }, 500);
-                })
+                });
 
                 Link.appendChild(Img);
-            })
+            });
         },
 
         /**
@@ -158,15 +155,15 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
 
             let Target = event.target;
 
-            if (Target.nodeName != 'A') {
-                Target = Target.getParent('a');
+            if (Target.nodeName !== 'A') {
+                Target = Target.closest('a');
             }
 
             this.$ImageWindow = new ImagePopup({
                 images: this.$images
             });
 
-            this.$ImageWindow.showImage(Target.get('href'));
+            this.$ImageWindow.showImage(Target.getAttribute('href'));
         },
 
         /**
@@ -177,7 +174,7 @@ define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
          */
         $shuffle: function (a) {
             for (let i = a.length - 1; i > 0; i--) {
-                const j      = Math.floor(Math.random() * (i + 1));
+                const j = Math.floor(Math.random() * (i + 1));
                 [a[i], a[j]] = [a[j], a[i]];
             }
 

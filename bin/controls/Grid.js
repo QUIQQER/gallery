@@ -19,7 +19,7 @@ define('package/quiqqer/gallery/bin/controls/Grid', [
     return new Class({
 
         Extends: QUIControl,
-        Type   : 'package/quiqqer/gallery/bin/controls/Grid',
+        Type: 'package/quiqqer/gallery/bin/controls/Grid',
 
         Binds: [
             '$onImport',
@@ -33,11 +33,11 @@ define('package/quiqqer/gallery/bin/controls/Grid', [
         initialize: function (options) {
             this.parent(options);
 
-            this.$ImageWindow  = false;
+            this.$ImageWindow = false;
             this.$CompleteList = false;
 
             this.$__resized = false;
-            this.$images    = [];
+            this.$images = [];
 
             this.addEvents({
                 onImport: this.$onImport
@@ -48,45 +48,43 @@ define('package/quiqqer/gallery/bin/controls/Grid', [
          * event on inject
          */
         $onImport: function () {
-            var images = this.$Elm.getElements(
+            let images = Array.from(this.$Elm.querySelectorAll(
                 '.quiqqer-gallery-grid-entry-image, .quiqqer-control-gallery-grid-image, .quiqqer-control-gallery-gridAdvanced-image'
-            );
+            ));
 
             if (this.$Elm.get('data-qui-titleclickable') == "1") {
                 this.setAttribute('titleclickable', this.$Elm.get('data-qui-titleclickable'));
             }
 
             if (this.getAttribute('titleclickable')) {
-                var titles = this.$Elm.getElements(
+                const titles = Array.from(this.$Elm.querySelectorAll(
                     '.quiqqer-gallery-grid-entry-text a'
-                );
+                ));
 
                 images = images.concat(titles)
             }
 
-            for (var i = 0, len = images.length; i < len; i++) {
-                images[i].addEvent('click', this.$imageClick);
+            for (let i = 0, len = images.length; i < len; i++) {
+                images[i].addEventListener('click', this.$imageClick);
             }
 
             // get the complete list
-            var completeList = this.$Elm.getElement(
+            const completeList = this.$Elm.querySelector(
                 '.quiqqer-gallery-grid-list-complete'
             );
 
-            this.$CompleteList = new Element('div', {
-                html  : completeList.innerHTML.replace('<template>', '').replace('</template>', ''),
-                styles: {
-                    display: "none"
-                }
-            }).inject(this.$Elm);
+            this.$CompleteList = document.createElement('div');
+            this.$CompleteList.innerHTML = completeList.innerHTML.replace('<template>', '').replace('</template>', '');
+            this.$CompleteList.style.display = 'none';
+            this.$Elm.appendChild(this.$CompleteList);
 
-            this.$images = this.$CompleteList.getElements(
+            this.$images = Array.from(this.$CompleteList.querySelectorAll(
                 '.quiqqer-gallery-grid-list-complete-entry'
-            ).map(function (Elm) {
+            )).map(function (Elm) {
                 return {
-                    src  : Elm.get('data-src'),
-                    title: Elm.getElement('.title').get('html'),
-                    short: Elm.getElement('.short').get('html')
+                    src: Elm.get('data-src'),
+                    title: Elm.querySelector('.title').innerHTML,
+                    short: Elm.querySelector('.short').innerHTML
                 };
             });
         },
@@ -97,21 +95,20 @@ define('package/quiqqer/gallery/bin/controls/Grid', [
          * @param {DOMEvent} event
          */
         $imageClick: function (event) {
-            var Target = event.target;
+            event.preventDefault();
+            event.stopPropagation();
 
-            if (typeOf(event) === 'domevent') {
-                event.stop();
-            }
+            let Target = event.target;
 
-            if (Target.nodeName != 'A') {
-                Target = Target.getParent('a');
+            if (Target.nodeName !== 'A') {
+                Target = Target.closest('a');
             }
 
             this.$ImageWindow = new ImagePopup({
                 images: this.$images
             });
 
-            this.$ImageWindow.showImage(Target.get('href'));
+            this.$ImageWindow.showImage(Target.getAttribute('href'));
         }
     });
 });
