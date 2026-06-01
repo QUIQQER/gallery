@@ -13,17 +13,13 @@ use QUI;
  * Class Grid
  *
  * Brick that displays images in a grid.
- *
- * @author  www.pcsg.de (Michael Danielczok)
- *
- * @package quiqqer/gallery
  */
 class GridAdvanced extends QUI\Control
 {
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {

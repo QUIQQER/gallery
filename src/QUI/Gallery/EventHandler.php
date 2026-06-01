@@ -10,8 +10,6 @@ use QUI\Template;
 
 /**
  * Class EventHandler
- *
- * @package QUI\Gallery
  */
 class EventHandler
 {

@@ -16,14 +16,13 @@ use function dirname;
 
 /**
  * Class Slider
- * @package QUI\Gallery\Controls\Logo\Slider
  */
 class Slider extends QUI\Control
 {
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -113,9 +112,13 @@ packages/quiqqer/gallery/src/QUI/Gallery/Controls/Logo/Slider.php:84'
         $images = [];
 
         if ($Folder instanceof Folder) {
-            $images = $Folder->getImages([
+            $folderImages = $Folder->getImages([
                 'order' => $order
             ]);
+
+            if (is_array($folderImages)) {
+                $images = $folderImages;
+            }
         }
 
         if ($this->getAttribute('max') && count($images) > $this->getAttribute('max')) {

@@ -14,8 +14,6 @@ use function dirname;
 
 /**
  * Class Slider
- *
- * @package QUI\Gallery\Controls\ImageSlider
  */
 class ImageSlider extends QUI\Control
 {
@@ -24,7 +22,7 @@ class ImageSlider extends QUI\Control
     /**
      * constructor
      *
-     * @param array $attributes
+     * @param array<string, mixed> $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -71,6 +69,8 @@ class ImageSlider extends QUI\Control
             $limit = 10;
         }
 
+        $limit = (int)$limit;
+
         switch ($this->getAttribute('order')) {
             case 'random':
             case 'title DESC':
@@ -99,11 +99,15 @@ class ImageSlider extends QUI\Control
 
         $folderIds = $this->getAttribute('folderIds');
 
-        if ($folderIds && is_string($folderIds)) {
-            $folderIds = explode(',', $folderIds);
+        if (is_string($folderIds)) {
+            $folderIds = array_filter(explode(',', $folderIds));
         }
 
-        if ($folderIds && count($folderIds) > 0) {
+        if (!is_array($folderIds)) {
+            $folderIds = [];
+        }
+
+        if (count($folderIds) > 0) {
             $images = $this->getImagesByFolderIds($folderIds, $order, $limit, $shuffleImages);
         } else {
             try {
@@ -130,7 +134,11 @@ class ImageSlider extends QUI\Control
             $images = [];
 
             if (method_exists($Folder, 'getImages')) {
-                $images = $Folder->getImages($query);
+                $folderImages = $Folder->getImages($query);
+
+                if (is_array($folderImages)) {
+                    $images = $folderImages;
+                }
             }
 
             if ($shuffleImages && $limit && count($images)) {
@@ -212,12 +220,12 @@ class ImageSlider extends QUI\Control
     /**
      * Get images from multiple folders (direct SQL query).
      *
-     * @param array $folderIds
+     * @param array<int, int|string> $folderIds
      * @param string $order
      * @param int $limit
      * @param bool $shuffleImages - if true, get all images
      *
-     * @return array
+     * @return array<int, mixed>
      */
     private function getImagesByFolderIds(
         array $folderIds,
@@ -225,8 +233,14 @@ class ImageSlider extends QUI\Control
         int $limit,
         bool $shuffleImages = false
     ): array {
-        $table = QUI::getDBTableName($this->Project->getAttribute('name') . '_media');
-        $table_rel = QUI::getDBTableName($this->Project->getAttribute('name') . '_media_relations');
+        $projectName = $this->Project->getAttribute('name');
+
+        if (!is_string($projectName)) {
+            return [];
+        }
+
+        $table = QUI::getDBTableName($projectName . '_media');
+        $table_rel = QUI::getDBTableName($projectName . '_media_relations');
 
         $whereClause = [
             $table_rel . '.child = ' . $table . '.id',

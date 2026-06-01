@@ -1,10 +1,5 @@
 /**
  * Children listing
- *
- * @module package/quiqqer/gallery/bin/controls/Slider/ImageSlider
- *
- * @author www.pcsg.de (Henning Leutz)
- * @author www.pcsg.de (Michael Danielczok)
  */
 define('package/quiqqer/gallery/bin/controls/ImageSlider', [
 
@@ -18,7 +13,7 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
     return new Class({
 
         Extends: QUIControl,
-        Type   : 'package/quiqqer/gallery/bin/controls/ImageSlider',
+        Type: 'package/quiqqer/gallery/bin/controls/ImageSlider',
 
         Binds: [
             '$onImport',
@@ -32,14 +27,14 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
             this.parent(options);
 
             this.$SlideFX = null;
-            this.$Prev    = null;
-            this.$Next    = null;
-            this.$Inner   = null;
+            this.$Prev = null;
+            this.$Next = null;
+            this.$Inner = null;
 
             this.$scrollLength = null;
-            this.$scrollMax    = 0;
-            this.$mobile       = true;
-            this.$icons        = null;
+            this.$scrollMax = 0;
+            this.$mobile = true;
+            this.$icons = null;
 
             this.addEvents({
                 onImport: this.$onImport
@@ -52,20 +47,20 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * resize the control and recalc all slide vars
          */
         resize: function () {
-            var size    = this.getElm().getSize(),
-                winSize = QUI.getWindowSize();
+            const size = this.getElm().getSize();
+            const winSize = QUI.getWindowSize();
 
             // display the buttons? if mobile, dont display it
             if (winSize.x < size.x + 100) {
                 this.$mobile = true;
-                this.getElm().addClass('quiqqer-gallery-imageSlider-mobile');
+                this.getElm().classList.add('quiqqer-gallery-imageSlider-mobile');
             } else {
                 this.$mobile = false;
-                this.getElm().removeClass('quiqqer-gallery-imageSlider-mobile');
+                this.getElm().classList.remove('quiqqer-gallery-imageSlider-mobile');
             }
 
             this.$scrollLength = (size.x / 1.2).round();
-            this.$scrollMax    = this.$Inner.getScrollSize().x - size.x;
+            this.$scrollMax = this.$Inner.getScrollSize().x - size.x;
             // this.$icons.setStyle('line-height', size.y);
             this.$onScroll();
         },
@@ -74,49 +69,43 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * event : on import
          */
         $onImport: function () {
-            const Elm  = this.getElm(),
-                SliderElm = Elm.getElement('.quiqqer-gallery-imageSlider-container'),
+            const Elm = this.getElm(),
+                SliderElm = Elm.querySelector('.quiqqer-gallery-imageSlider-container'),
                 size = SliderElm.getSize();
 
-            this.$Next = new Element('div', {
-                'class': 'quiqqer-gallery-imageSlider-next hide-on-mobile',
-                html   : '<span class="fa fa-angle-right"></span>',
-                styles : {
-                    display   : 'none', // direkt display: none, damit der Button beim ersten Laden
-                    lineHeight: size.y  // der Seite kein keinen Slide-Effekt hat
-                },
-                events : {
-                    click: this.next
-                }
-            }).inject(SliderElm);
+            this.$Next = document.createElement('div');
+            this.$Next.className = 'quiqqer-gallery-imageSlider-next hide-on-mobile';
+            this.$Next.innerHTML = '<span class="fa fa-angle-right"></span>';
+            this.$Next.style.display = 'none';
+            this.$Next.style.lineHeight = size.y + 'px';
+            this.$Next.addEventListener('click', this.next);
+            SliderElm.appendChild(this.$Next);
 
-            this.$Prev = new Element('div', {
-                'class': 'quiqqer-gallery-imageSlider-prev hide-on-mobile',
-                html   : '<span class="fa fa-angle-left"></span>',
-                styles : {
-                    lineHeight: size.y
-                },
-                events : {
-                    click: this.prev
-                }
-            }).inject(SliderElm);
+            this.$Prev = document.createElement('div');
+            this.$Prev.className = 'quiqqer-gallery-imageSlider-prev hide-on-mobile';
+            this.$Prev.innerHTML = '<span class="fa fa-angle-left"></span>';
+            this.$Prev.style.lineHeight = size.y + 'px';
+            this.$Prev.addEventListener('click', this.prev);
+            SliderElm.appendChild(this.$Prev);
 
-            this.$Inner = Elm.getElement(
+            this.$Inner = Elm.querySelector(
                 '.quiqqer-gallery-imageSlider-container-inner'
             );
 
             this.$SlideFX = new Fx.Scroll(this.$Inner);
-            this.$icons   = Elm.getElements('article a .quiqqer-icon');
+            this.$icons = Array.from(Elm.querySelectorAll('article a .quiqqer-icon'));
 
-            var scrollSpy = QUIFunctionUtils.debounce(this.$onScroll, 200);
+            const scrollSpy = QUIFunctionUtils.debounce(this.$onScroll, 200);
 
-            this.$Inner.addEvent('scroll', scrollSpy);
+            this.$Inner.addEventListener('scroll', scrollSpy);
 
             this.$NextFX = moofx(this.$Next);
             this.$PrevFX = moofx(this.$Prev);
 
             // calc scrolling vars
-            this.resize.delay(200, this);
+            setTimeout(() => {
+                this.resize();
+            }, 200);
 
             if (!this.$icons || !this.$icons.length) {
                 return;
@@ -135,8 +124,8 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * @return {Promise}
          */
         prev: function () {
-            return new Promise(function (resolve) {
-                var left = this.$Inner.getScroll().x - this.$scrollLength;
+            return new Promise((resolve) => {
+                let left = this.$Inner.getScroll().x - this.$scrollLength;
 
                 if (left < 0) {
                     left = 0;
@@ -144,7 +133,7 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
 
                 this.$SlideFX.start(left, 0).chain(resolve);
 
-            }.bind(this));
+            });
         },
 
         /**
@@ -153,12 +142,12 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * @return {Promise}
          */
         next: function () {
-            return new Promise(function (resolve) {
-                var left = this.$Inner.getScroll().x + this.$scrollLength;
+            return new Promise((resolve) => {
+                const left = this.$Inner.getScroll().x + this.$scrollLength;
 
                 this.$SlideFX.start(left, 0).chain(resolve);
 
-            }.bind(this));
+            });
         },
 
         /**
@@ -166,13 +155,13 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * @returns {Promise}
          */
         showNextButton: function () {
-            return new Promise(function (resolve) {
+            return new Promise((resolve) => {
                 this.$Next.setStyle('display', null);
 
-                this.$Next.addClass('show-next');
+                this.$Next.classList.add('show-next');
                 resolve();
 
-            }.bind(this));
+            });
         },
 
         /**
@@ -180,10 +169,10 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * @returns {Promise}
          */
         showPrevButton: function () {
-            return new Promise(function (resolve) {
-                this.$Prev.addClass('show-prev');
+            return new Promise((resolve) => {
+                this.$Prev.classList.add('show-prev');
                 resolve();
-            }.bind(this));
+            });
         },
 
         /**
@@ -191,10 +180,10 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * @returns {Promise}
          */
         hideNextButton: function () {
-            return new Promise(function (resolve) {
-                this.$Next.removeClass('show-next');
+            return new Promise((resolve) => {
+                this.$Next.classList.remove('show-next');
                 resolve();
-            }.bind(this));
+            });
         },
 
         /**
@@ -202,10 +191,10 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * @returns {Promise}
          */
         hidePrevButton: function () {
-            return new Promise(function (resolve) {
-                this.$Prev.removeClass('show-prev');
+            return new Promise((resolve) => {
+                this.$Prev.classList.remove('show-prev');
                 resolve();
-            }.bind(this));
+            });
         },
 
         /**
@@ -213,10 +202,10 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider', [
          * look for the prev and next button
          */
         $onScroll: function () {
-            var left = this.$Inner.getScroll().x;
+            const left = this.$Inner.getScroll().x;
 
-            var scrollSize = this.$Inner.getScrollSize().x;
-            var domSize    = this.$Inner.getSize().x;
+            const scrollSize = this.$Inner.getScrollSize().x;
+            const domSize = this.$Inner.getSize().x;
 
             if (scrollSize <= domSize) {
                 this.hidePrevButton();
