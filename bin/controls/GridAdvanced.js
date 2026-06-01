@@ -1,10 +1,6 @@
 /**
  * Grid Gallery
  * Functionality for the PHP Grid Control
- *
- * @module package/quiqqer/gallery/bin/controls/GridAdvanced
- * @author www.pcsg.de (Henning Leutz)
- * @author www.pcsg.de (Michael Danielczok)
  */
 define('package/quiqqer/gallery/bin/controls/GridAdvanced', [
 

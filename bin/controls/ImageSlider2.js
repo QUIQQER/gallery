@@ -1,10 +1,5 @@
 /**
  * Children listing
- *
- * @module package/quiqqer/gallery/bin/controls/Slider/ImageSlider2
- *
- * @author www.pcsg.de (Henning Leutz)
- * @author www.pcsg.de (Michael Danielczok)
  */
 define('package/quiqqer/gallery/bin/controls/ImageSlider2', [
 

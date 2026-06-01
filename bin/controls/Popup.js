@@ -1,9 +1,6 @@
 /**
  * Image Popup
  * Shows a image popup and the user can navigate through a list of images
- *
- * @module package/quiqqer/gallery/bin/controls/Popup
- * @author www.pcsg.de (Henning Leutz)
  */
 define('package/quiqqer/gallery/bin/controls/Popup', [
 

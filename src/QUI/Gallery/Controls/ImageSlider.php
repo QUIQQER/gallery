@@ -14,8 +14,6 @@ use function dirname;
 
 /**
  * Class Slider
- *
- * @package QUI\Gallery\Controls\ImageSlider
  */
 class ImageSlider extends QUI\Control
 {

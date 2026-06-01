@@ -16,7 +16,6 @@ use function dirname;
 
 /**
  * Class Slider
- * @package QUI\Gallery\Controls\Logo\Slider
  */
 class InfiniteCarousel extends QUI\Control
 {

@@ -1,9 +1,6 @@
 /**
  * Component gallery
  *
- * @module package/quiqqer/gallery/bin/controls/Slider
- * @author www.pcsg.de (Henning Leutz)
- *
  * @event onLoaded [self]
  * @event animateOutBegin [self, Element]
  * @event animateOutEnd [self, Element]

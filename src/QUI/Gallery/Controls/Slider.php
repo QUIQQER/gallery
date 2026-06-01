@@ -14,8 +14,6 @@ use function dirname;
 
 /**
  * Class Slider
- *
- * @package quiqqer/gallery
  */
 class Slider extends QUI\Control
 {

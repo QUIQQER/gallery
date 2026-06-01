@@ -13,10 +13,6 @@ use QUI;
  * Class Grid
  *
  * Brick that displays images in a grid.
- *
- * @author  www.pcsg.de (Michael Danielczok)
- *
- * @package quiqqer/gallery
  */
 class Grid extends QUI\Control
 {

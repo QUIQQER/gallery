@@ -15,8 +15,6 @@ use function dirname;
 
 /**
  * Class Component
- *
- * @package quiqqer/gallery
  */
 class Component extends QUI\Control
 {

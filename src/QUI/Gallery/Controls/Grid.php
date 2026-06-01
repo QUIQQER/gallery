@@ -12,8 +12,6 @@ use QUI\Projects\Media\Folder;
 
 /**
  * Class Grid
- *
- * @package quiqqer/gallery
  */
 class Grid extends QUI\Control
 {
