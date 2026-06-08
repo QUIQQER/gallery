@@ -498,21 +498,21 @@ define('package/quiqqer/gallery/bin/controls/Popup', [
 
             let currentSrc = this.$Image.get('data-src');
             const images = this.getAttribute('images');
+            let currentIndex = -1;
 
             if (currentSrc.match(window.location.host)) {
                 currentSrc = currentSrc.split(window.location.host)[1];
             }
 
-            let i;
-
-            for (i = 0; i < images.length; i++) {
+            for (let i = 0; i < images.length; i++) {
                 if (images[i].src === currentSrc) {
+                    currentIndex = i;
                     break;
                 }
             }
 
-            if (typeof images[i + 1] !== 'undefined') {
-                this.showImage(images[i + 1].src);
+            if (currentIndex !== -1 && typeof images[currentIndex + 1] !== 'undefined') {
+                this.showImage(images[currentIndex + 1].src);
                 return;
             }
 
@@ -530,21 +530,21 @@ define('package/quiqqer/gallery/bin/controls/Popup', [
 
             let currentSrc = this.$Image.get('data-src');
             const images = this.getAttribute('images');
+            let currentIndex = -1;
 
             if (currentSrc.match(window.location.host)) {
                 currentSrc = currentSrc.split(window.location.host)[1];
             }
 
-            let i;
-
-            for (i = 0; i < images.length; i++) {
+            for (let i = 0; i < images.length; i++) {
                 if (images[i].src === currentSrc) {
+                    currentIndex = i;
                     break;
                 }
             }
 
-            if (i > 0) {
-                this.showImage(images[i - 1].src);
+            if (currentIndex > 0) {
+                this.showImage(images[currentIndex - 1].src);
                 return;
             }
 
