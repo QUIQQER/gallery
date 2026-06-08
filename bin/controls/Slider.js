@@ -554,7 +554,7 @@ define('package/quiqqer/gallery/bin/controls/Slider', [
          */
         animateOut: function (Elm, direction, callback) {
             return new Promise((resolve) => {
-                if (!Elm || ((Array.isArray(Elm) || (typeof Elements !== 'undefined' && Elm instanceof Elements)) && !Elm.length)) {
+                if (!Elm || (((Array.isArray(Elm) || (typeof Elements !== 'undefined' && Elm instanceof Elements)) || (typeof Elm.length === 'number' && !Elm.nodeType)) && !Elm.length)) {
                     if (typeof callback === 'function') {
                         callback();
                     }
@@ -598,7 +598,7 @@ define('package/quiqqer/gallery/bin/controls/Slider', [
          */
         animateIn: function (Elm, direction, callback) {
             return new Promise((resolve) => {
-                if (!Elm || ((Array.isArray(Elm) || (typeof Elements !== 'undefined' && Elm instanceof Elements)) && !Elm.length)) {
+                if (!Elm || (((Array.isArray(Elm) || (typeof Elements !== 'undefined' && Elm instanceof Elements)) || (typeof Elm.length === 'number' && !Elm.nodeType)) && !Elm.length)) {
                     if (typeof callback === 'function') {
                         callback();
                     }
