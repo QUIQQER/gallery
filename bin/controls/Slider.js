@@ -776,12 +776,12 @@ define('package/quiqqer/gallery/bin/controls/Slider', [
                 return;
             }
 
-            if (event.key === 'left') {
+            if (event.key === 'left' || event.key === 'ArrowLeft') {
                 this.prev();
                 return;
             }
 
-            if (event.key === 'right') {
+            if (event.key === 'right' || event.key === 'ArrowRight') {
                 this.next();
             }
         },

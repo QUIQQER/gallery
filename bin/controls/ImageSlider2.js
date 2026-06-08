@@ -64,7 +64,13 @@ define('package/quiqqer/gallery/bin/controls/ImageSlider2', [
 
             this.$scrollLength = (size.x / 1.2).round();
             this.$scrollMax = this.$Inner.getScrollSize().x - size.x;
-            this.$icons.setStyle('line-height', size.y);
+
+            if (this.$icons && this.$icons.length) {
+                this.$icons.forEach((Icon) => {
+                    Icon.style.lineHeight = size.y + 'px';
+                });
+            }
+
             this.$onScroll();
 
             // new scroll length

@@ -503,7 +503,9 @@ define('package/quiqqer/gallery/bin/controls/Popup', [
                 currentSrc = currentSrc.split(window.location.host)[1];
             }
 
-            for (let i = 0, len = images.length; i < len; i++) {
+            let i;
+
+            for (i = 0; i < images.length; i++) {
                 if (images[i].src === currentSrc) {
                     break;
                 }
@@ -533,7 +535,9 @@ define('package/quiqqer/gallery/bin/controls/Popup', [
                 currentSrc = currentSrc.split(window.location.host)[1];
             }
 
-            for (let i = 0, len = images.length; i < len; i++) {
+            let i;
+
+            for (i = 0; i < images.length; i++) {
                 if (images[i].src === currentSrc) {
                     break;
                 }
@@ -603,16 +607,16 @@ define('package/quiqqer/gallery/bin/controls/Popup', [
          * @param {DOMEvent} event
          */
         $keyup: function (event) {
-            if (event.key === 'left') {
+            if (event.key === 'left' || event.key === 'ArrowLeft') {
                 this.showPrevImage();
                 return;
             }
 
-            if (event.key === 'right') {
+            if (event.key === 'right' || event.key === 'ArrowRight') {
                 this.showNextImage();
             }
 
-            if (event.key === 'esc') {
+            if (event.key === 'esc' || event.key === 'Escape') {
                 this.close();
             }
         },
