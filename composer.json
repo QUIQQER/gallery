@@ -2,20 +2,24 @@
     "name": "quiqqer/gallery",
     "type": "quiqqer-module",
     "description": "Present your photos, products and pictures in elaborate and beautiful galleries.",
-    "license": "GPL-3.0+",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://www.quiqqer.com",
     "authors": [
         {
-            "name": "Henning Leutz",
-            "email": "leutz@pcsg.de",
-            "homepage": "https://www.pcsg.de",
-            "role": "Developer"
+            "name": "PCSG - Computer & Internet Service OHG",
+            "email": "info@quiqqer.com",
+            "homepage": "https://www.quiqqer.com",
+            "role": "Maintainer"
         }
     ],
     "support": {
-        "email": "support@pcsg.de"
+        "email": "support@pcsg.de",
+        "issues": "https://dev.quiqqer.com/quiqqer/package-gallery/issues",
+        "source": "https://dev.quiqqer.com/quiqqer/package-gallery"
     },
     "require": {
-        "quiqqer/core": "^2",
+        "php": "^8.2",
+        "quiqqer/core": "^2.24",
         "quiqqer-asset/hammerjs": "^2"
     },
     "autoload": {
