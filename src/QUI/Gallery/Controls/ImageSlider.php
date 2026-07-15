@@ -270,6 +270,7 @@ class ImageSlider extends QUI\Control
         $relationsTable = $Platform->quoteSingleIdentifier(
             QUI::getDBTableName($projectName . '_media_relations')
         );
+
         $mediaId = 'media.' . $Platform->quoteSingleIdentifier('id');
         $mediaDeleted = 'media.' . $Platform->quoteSingleIdentifier('deleted');
         $mediaType = 'media.' . $Platform->quoteSingleIdentifier('type');
@@ -277,6 +278,7 @@ class ImageSlider extends QUI\Control
         $mediaOrder = 'media.' . $Platform->quoteSingleIdentifier($orderField);
         $relationChild = 'relations.' . $Platform->quoteSingleIdentifier('child');
         $relationParent = 'relations.' . $Platform->quoteSingleIdentifier('parent');
+
         $QueryBuilder = $Connection->createQueryBuilder();
         $QueryBuilder
             ->select($mediaId)
