@@ -28,7 +28,7 @@ class GridAdvanced extends QUI\Control
             'class' => 'quiqqer-gallery-brick-gridAdvanced',
             'max' => 12,
             'start' => 0,
-            'entriesPerLine ' => 3,
+            'entriesPerLine' => 3,
             'folder' => false,
             'scaleImage' => true,
             'addGap' => true,

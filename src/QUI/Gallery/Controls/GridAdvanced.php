@@ -93,11 +93,11 @@ class GridAdvanced extends QUI\Control
                 break;
         }
 
-        if (!is_numeric($start)) {
+        if (!is_numeric($start) || (int)$start < 0) {
             $start = 0;
         }
 
-        if (!is_numeric($max)) {
+        if (!is_numeric($max) || (int)$max < 1) {
             $max = 12;
         }
 

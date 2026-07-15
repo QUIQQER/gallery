@@ -27,7 +27,7 @@ class Grid extends QUI\Control
         $this->setAttributes([
             'max' => 9,
             'start' => 0,
-            'entriesPerLine ' => 3,
+            'entriesPerLine' => 3,
             'folder' => false,
             'scaleImage' => true,
             'addGap' => true,
