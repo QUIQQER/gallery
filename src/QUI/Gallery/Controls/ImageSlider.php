@@ -6,10 +6,13 @@
 
 namespace QUI\Gallery\Controls;
 
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Exception as DBALException;
 use Exception;
 use QUI;
 use QUI\Projects\Media\Folder;
 
+use function array_map;
 use function dirname;
 
 /**
@@ -227,74 +230,96 @@ class ImageSlider extends QUI\Control
      *
      * @return array<int, mixed>
      */
-    private function getImagesByFolderIds(
+    protected function getImagesByFolderIds(
         array $folderIds,
         string $order,
         int $limit,
         bool $shuffleImages = false
     ): array {
+        if ($folderIds === []) {
+            return [];
+        }
+
         $projectName = $this->Project->getAttribute('name');
 
         if (!is_string($projectName)) {
             return [];
         }
 
-        $table = QUI::getDBTableName($projectName . '_media');
-        $table_rel = QUI::getDBTableName($projectName . '_media_relations');
-
-        $whereClause = [
-            $table_rel . '.child = ' . $table . '.id',
-            $table . '.deleted = 0 ',
-            $table . '.type = \'image\'',
-            'active = 1',
+        $allowedOrders = [
+            'title DESC' => ['title', 'DESC'],
+            'title ASC' => ['title', 'ASC'],
+            'name DESC' => ['name', 'DESC'],
+            'name ASC' => ['name', 'ASC'],
+            'c_date DESC' => ['c_date', 'DESC'],
+            'c_date ASC' => ['c_date', 'ASC'],
+            'e_date DESC' => ['e_date', 'DESC'],
+            'e_date ASC' => ['e_date', 'ASC'],
+            'priority DESC' => ['priority', 'DESC'],
+            'priority ASC' => ['priority', 'ASC']
         ];
-
-        $folderConditions = [];
-
-        foreach ($folderIds as $folderId) {
-            $folderConditions[] = $table_rel . '.parent = ' . (int)$folderId;
-        }
-
-        $whereClause[] = '(' . implode(' OR ', $folderConditions) . ')';
-        $whereClauseString = implode(' AND ', $whereClause);
-
-        $dbQuery = [
-            'select' => 'id',
-            'from' => [
-                $table,
-                $table_rel,
-            ],
-            'limit' => $limit,
-            'where' => $whereClauseString,
-        ];
-
-        $dbQuery['order'] = $order;
+        [$orderField, $orderDirection] = $allowedOrders[$order] ?? $allowedOrders['c_date DESC'];
 
         if ($shuffleImages) {
-            unset($dbQuery['limit']);
-            $dbQuery['order'] = 'c_date DESC';
+            [$orderField, $orderDirection] = $allowedOrders['c_date DESC'];
         }
 
-        // database
+        $Connection = QUI::getDataBaseConnection();
+        $Platform = $Connection->getDatabasePlatform();
+        $mediaTable = $Platform->quoteSingleIdentifier(QUI::getDBTableName($projectName . '_media'));
+        $relationsTable = $Platform->quoteSingleIdentifier(
+            QUI::getDBTableName($projectName . '_media_relations')
+        );
+        $mediaId = 'media.' . $Platform->quoteSingleIdentifier('id');
+        $mediaDeleted = 'media.' . $Platform->quoteSingleIdentifier('deleted');
+        $mediaType = 'media.' . $Platform->quoteSingleIdentifier('type');
+        $mediaActive = 'media.' . $Platform->quoteSingleIdentifier('active');
+        $mediaOrder = 'media.' . $Platform->quoteSingleIdentifier($orderField);
+        $relationChild = 'relations.' . $Platform->quoteSingleIdentifier('child');
+        $relationParent = 'relations.' . $Platform->quoteSingleIdentifier('parent');
+        $QueryBuilder = $Connection->createQueryBuilder();
+        $QueryBuilder
+            ->select($mediaId)
+            ->from($mediaTable, 'media')
+            ->innerJoin(
+                'media',
+                $relationsTable,
+                'relations',
+                $relationChild . ' = ' . $mediaId
+            )
+            ->where($mediaDeleted . ' = :deleted')
+            ->andWhere($mediaType . ' = :type')
+            ->andWhere($mediaActive . ' = :active')
+            ->andWhere($QueryBuilder->expr()->in($relationParent, ':folderIds'))
+            ->setParameter('deleted', 0)
+            ->setParameter('type', 'image')
+            ->setParameter('active', 1)
+            ->setParameter('folderIds', array_map('intval', $folderIds), ArrayParameterType::INTEGER)
+            ->orderBy($mediaOrder, $orderDirection);
+
+        if (!$shuffleImages) {
+            $QueryBuilder->setMaxResults($limit);
+        }
+
         try {
-            $fetch = QUI::getDataBase()->fetch($dbQuery);
-        } catch (QUI\Exception $Exception) {
+            $imageIds = $QueryBuilder->executeQuery()->fetchFirstColumn();
+        } catch (DBALException $Exception) {
             QUI\System\Log::writeException($Exception);
 
             return [];
         }
 
         if ($shuffleImages && $limit) {
-            shuffle($fetch);
-            $fetch = array_slice($fetch, 0, $limit);
+            shuffle($imageIds);
+            $imageIds = array_slice($imageIds, 0, $limit);
         }
 
         $result = [];
 
-        foreach ($fetch as $entry) {
+        foreach ($imageIds as $imageId) {
             try {
                 $Media = $this->Project->getMedia();
-                $result[] = $Media->get((int)$entry['id']);
+                $result[] = $Media->get((int)$imageId);
             } catch (QUI\Exception $Exception) {
                 QUI\System\Log::addDebug($Exception->getMessage());
             }
