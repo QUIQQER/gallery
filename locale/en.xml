@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/gallery" datatype="php,js">
+        <locale name="package.title">
+<en><![CDATA[QUIQQER - Gallery]]></en>
+        </locale>
+        <locale name="package.description" html="true">
+<en><![CDATA[Present your photos, products and pictures in elaborate and beautiful galleries.]]></en>
+        </locale>
+        <locale name="admin.types.gallery.component">
+<en><![CDATA[QUIQQER - Gallery "Effects"]]></en>
+        </locale>
+        <locale name="admin.types.gallery.grid">
+<en><![CDATA[QUIQQER - Gallery "Grid"]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.folderId">
+<en><![CDATA[Media folder]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.titleClickable">
+<en><![CDATA[Click on the title to open the picture in a larger view]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.component.setting.effect">
+<en><![CDATA[Gallery effect]]></en>
+        </locale>
+        <locale name="bricks.gallery.component.title">
+<en><![CDATA[Gallery: Components]]></en>
+        </locale>
+        <locale name="admin.types.gallery.slider">
+<en><![CDATA[QUIQQER - Gallery "Slider"]]></en>
+        </locale>
+        <locale name="bricks.gallery.slider.title">
+<en><![CDATA[Gallery: Slider-Effect]]></en>
+        </locale>
+        <locale name="quiqqer/gallery:types/gallery-component.description" html="true">
+<en><![CDATA[<p>Gallery-Type with many different effects. In the gallery-settings of the page-settings
+            you can choose one of the following effects:<br />
+            Pulsing, Coverflow, Photo, Ferris Wheel, Snake and Slide Behind</p>]]></en>
+        </locale>
+        <locale name="quiqqer/gallery:types/gallery-grid.title">
+<en><![CDATA[QUIQQER - Gallery-Type: "Grid"]]></en>
+        </locale>
+        <locale name="quiqqer/gallery:types/gallery-grid.description">
+<en><![CDATA[The gallery-type "Grid" displays your images as a table with pagination.
+                         Clicking on an image enlarges it.
+                         In this mode you can navigate between the pictures using the arrow-keys on your keyboard or by
+                         using the arrows on the left and right of the picture.]]></en>
+        </locale>
+        <locale name="quiqqer/gallery:types/gallery-slider.title">
+<en><![CDATA[QUIQQER - Gallery-Type: "Slider"]]></en>
+        </locale>
+        <locale name="quiqqer/gallery:types/gallery-slider.description">
+<en><![CDATA[A gallery with a simple slide-effect where the pictures move from right to left into the frame]]></en>
+        </locale>
+        <locale name="image.zoom">
+<en><![CDATA[Image is zoomable]]></en>
+        </locale>
+        <locale name="quiqqer/gallery:types/gallery-component.title">
+<en><![CDATA[QUIQQER - Gallery-Type: "Effects"]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type.component-forwardPulse">
+<en><![CDATA[Gallery with pulse effect]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type.component-photoBrowse">
+<en><![CDATA[Gallery with photo effect]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type.component-coverflow">
+<en><![CDATA[Gallery with coverflow effect]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type.component-ferrisWheel">
+<en><![CDATA[Gallery with ferris wheel effect]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type.component-snake">
+<en><![CDATA[Gallery with snake effect]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type.component-slideBehind">
+<en><![CDATA[Gallery with slide behind effect]]></en>
+        </locale>
+
+        <locale name="bricks.gallery.grid.title">
+<en><![CDATA[Gallery: Grid]]></en>
+        </locale>
+        <locale name="bricks.gallery.grid.description">
+<en><![CDATA[This brick allows you to create a grid gallery.]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.folderId">
+<en><![CDATA[Media folder]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.max">
+<en><![CDATA[Max images]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.scaleImage">
+<en><![CDATA[Fill the whole area with image]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.scaleImage.desc">
+<en><![CDATA[If this option is enabled, the whole available area will be filled with the image. The image can be cropped and pixelated (depending on how large the image is).]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.addGap">
+<en><![CDATA[Enable spacing (gap) between images]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.border">
+<en><![CDATA[Enable border]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.showImageTitle">
+<en><![CDATA[Show image title]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.centerImage">
+<en><![CDATA[Center image in the box]]></en>
+        </locale>
+        <locale name="quiqqer.grid.settings.entriesPerLine">
+<en><![CDATA[Number of images per row]]></en>
+        </locale>
+
+<!-- grid advanced -->
+        <locale name="bricks.gallery.gridAdvanced.title">
+<en><![CDATA[Gallery: Advanced Grid]]></en>
+        </locale>
+        <locale name="bricks.gallery.gridAdvanced.description">
+<en><![CDATA[Display gallery in any grid format.]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.folderId">
+<en><![CDATA[Media folder]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.max">
+<en><![CDATA[Max images]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.addGap">
+<en><![CDATA[Enable spacing (gap) between images]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.showImageTitle">
+<en><![CDATA[Show image title]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template">
+<en><![CDATA[Template]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.1">
+<en><![CDATA[Template 1]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.2">
+<en><![CDATA[Template 2]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.3">
+<en><![CDATA[Template 3]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.4">
+<en><![CDATA[Template 4]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.5">
+<en><![CDATA[Template 5]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.6">
+<en><![CDATA[Template 6]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.7">
+<en><![CDATA[Template 7]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.8">
+<en><![CDATA[Template 8]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.9">
+<en><![CDATA[Template 9]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.10">
+<en><![CDATA[Template 10]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.2perRow">
+<en><![CDATA[2 images per row]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.3perRow">
+<en><![CDATA[3 images per row]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.4perRow">
+<en><![CDATA[4 images per row]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.5perRow">
+<en><![CDATA[5 images per row]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.template.6perRow">
+<en><![CDATA[6 images per row]]></en>
+        </locale>
+
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio">
+<en><![CDATA[Aspect ratio (list)]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.desc">
+<en><![CDATA[Aspect ratio of the images in the list: This setting only affects the standard templates (e.g., 2, 3, or 4 images per row). The "Template 1" to "Template 10" templates <strong>are not affected by this setting.</strong>]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.none">
+<en><![CDATA[No fixed aspect ratio - image dimensions take priority]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.16-9">
+<en><![CDATA[16:9 (TV & videos)]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.3-2">
+<en><![CDATA[3:2 (Photography)]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.4-3">
+<en><![CDATA[4:3 (Photography & old TV screens)]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.1-1">
+<en><![CDATA[1:1 (square)]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.3-4">
+<en><![CDATA[3:4 (Photography & old tv screens - vertical)]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.2-3">
+<en><![CDATA[2:3 (Photography - vertical)]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.aspectRatio.9-16">
+<en><![CDATA[9:16 (TV & videos - vertical)]]></en>
+        </locale>
+
+        <locale name="quiqqer.gridAdvanced.settings.variableColumnCount">
+<en><![CDATA[Variable column count]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.variableColumnCount.desc">
+<en><![CDATA[When the option is activated, the columns are automatically calculated, allowing the gallery to adapt automatically on desktops and mobile devices.<br>The calculation requires the minimum and maximum width. The starting point is the number of images per row selected in the "Template" option, so the option applies only to templates from "2 images per row" to "6 images per row".]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.minWidth">
+<en><![CDATA[Minimum Image Width]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.maxWidth">
+<en><![CDATA[Maximum image width]]></en>
+        </locale>
+
+        <locale name="bricks.gallery.logo.slider.title">
+<en><![CDATA[Gallery: Logo Slider]]></en>
+        </locale>
+        <locale name="bricks.gallery.logo.slider.description">
+<en><![CDATA[Slider for logos or smaller images]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.logo.slider.settings.folderId">
+<en><![CDATA[Media folder]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.logo.slider.settings.max">
+<en><![CDATA[Max images]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.logo.slider.settings.moreLink">
+<en><![CDATA[Link to the page with all logos (optional)]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.logo.slider.settings.template">
+<en><![CDATA[Template]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.logo.slider.settings.template.default">
+<en><![CDATA[Default]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.logo.slider.settings.desktopHeight">
+<en><![CDATA[Slider height on desktop]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.logo.slider.settings.mobileHeight">
+<en><![CDATA[Slider height on mobile]]></en>
+        </locale>
+
+        <locale name="quiqqer.gridAdvanced.settings.order.random">
+<en><![CDATA[Random]]></en>
+        </locale>
+
+        <locale name="quiqqer.gridAdvanced.settings.scaleImageOnHover">
+<en><![CDATA[Scale image on mouse over]]></en>
+        </locale><locale name="quiqqer.gridAdvanced.settings.scaleImageOnHover.desc">
+<en><![CDATA[The image is enlarged when you move the mouse pointer over it.]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.darkenImageOnHover">
+<en><![CDATA[Darken image on mouse over]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.darkenImageOnHover.desc">
+<en><![CDATA[When you move the mouse pointer over it, the image is darkened.]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.iconOnHover">
+<en><![CDATA[Show extra symbol on mouse over]]></en>
+        </locale>
+        <locale name="quiqqer.gridAdvanced.settings.iconOnHover.desc">
+<en><![CDATA[When you hover the mouse cursor over it, an icon appears over the image.]]></en>
+        </locale>
+
+
+        <locale name="quiqqer.gallery.setting.moreLink">
+<en><![CDATA[More link]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.moreLink">
+<en><![CDATA[More]]></en>
+        </locale>
+
+        <locale name="bricks.imageSlider.title">
+<en><![CDATA[Gallery: Slider-Carousel]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.description">
+<en><![CDATA[Slider carousel with images]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.folderId">
+<en><![CDATA[Image folder]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.folderIds">
+<en><![CDATA[Image folders (comma separated)]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.folderIds.desc">
+<en><![CDATA[If you use this option, the “Image folder” setting is ignored. Please enter the IDs of the media folders separated by commas.]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.sliderHeight">
+<en><![CDATA[Slider height]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.sliderHeight.desc">
+<en><![CDATA[This setting (in pixels) determines the height of the images that are displayed in the slider.]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.slider.settings.limit">
+<en><![CDATA[Max images]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.moreLink">
+<en><![CDATA[Link to the page with all images (optional)]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.template">
+<en><![CDATA[Template]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.template.default">
+<en><![CDATA[Default]]></en>
+        </locale>
+
+        <locale name="bricks.imageSlider.settings.imageBehavior">
+<en><![CDATA[Image behavior]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.imageBehavior.center">
+<en><![CDATA[Center images]]></en>
+        </locale>
+        <locale name="bricks.imageSlider.settings.imageBehavior.fill">
+<en><![CDATA[Center images and fill the entire area]]></en>
+        </locale>
+
+        <locale name="bricks.infiniteCarousel.title">
+<en><![CDATA[Gallery: Logo-Carousel]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.description">
+<en><![CDATA[Smooth, continuously looping logo carousel]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.folderId">
+<en><![CDATA[Image folder]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.limit">
+<en><![CDATA[Maximum number of logos]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.imgHeight">
+<en><![CDATA[Image height]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.carouselBlockSpacing">
+<en><![CDATA[Top and bottom spacing]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.carouselBlockSpacing.none">
+<en><![CDATA[None (default)]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.carouselBlockSpacing.small">
+<en><![CDATA[Small]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.carouselBlockSpacing.normal">
+<en><![CDATA[Normal]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.carouselBlockSpacing.large">
+<en><![CDATA[Large]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.animationDuration">
+<en><![CDATA[Animation duration]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.animationDuration.desc">
+<en><![CDATA[The more images, the slower the animation must be. A higher number means a slower run, a lower number means a faster run. <strong>The default value is 40, which corresponds to 40 seconds.</strong>]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.stopAnimationOnHover">
+<en><![CDATA[Stop animation on mouse over]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.direction">
+<en><![CDATA[Animation direction]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.direction.toLeft">
+<en><![CDATA[From right to left (default)]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.direction.toRight">
+<en><![CDATA[From left to right]]></en>
+        </locale>
+
+        <locale name="bricks.infiniteCarousel.settings.fadeInOut">
+<en><![CDATA[Fade in / out effect]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.fadeInOut.desc">
+<en><![CDATA[If the option is activated, the logos at the start and end of the carousel will fade in and out gently.]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.fadeInOutColor">
+<en><![CDATA[Fade in / out color]]></en>
+        </locale>
+        <locale name="bricks.infiniteCarousel.settings.fadeInOutColor.desc">
+<en><![CDATA[The colour selected here must match the background of the carousel.]]></en>
+        </locale>
+    </groups>
+
+    <groups name="quiqqer/gallery" datatype="php">
+        <locale name="quiqqer.gallery.settings.title">
+<en><![CDATA[Gallery settings]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.max">
+<en><![CDATA[Max images]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type">
+<en><![CDATA[Gallery look]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.type.grid">
+<en><![CDATA[Gallery grid]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort">
+<en><![CDATA[Picture sorting]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.titleDESC">
+<en><![CDATA[Title descending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.titleASC">
+<en><![CDATA[Title ascending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.nameDESC">
+<en><![CDATA[Name descending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.nameASC">
+<en><![CDATA[Name ascending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.c_dateDESC">
+<en><![CDATA[Create date descending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.c_dateASC">
+<en><![CDATA[Create date ascending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.e_dateDESC">
+<en><![CDATA[Edit date descending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.e_dateASC">
+<en><![CDATA[Edit date ascending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.priorityDESC">
+<en><![CDATA[Priority descending]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.sort.priorityASC">
+<en><![CDATA[Priority ascending]]></en>
+        </locale>
+
+        <locale name="quiqqer.gallery.settings.paginationPosition">
+<en><![CDATA[Pagination]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.paginationPosition.disabled">
+<en><![CDATA[Disabled]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.paginationPosition.top">
+<en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.paginationPosition.topAndBottom">
+<en><![CDATA[Top and bottom]]></en>
+        </locale>
+        <locale name="quiqqer.gallery.settings.paginationPosition.bottom">
+<en><![CDATA[Bottom]]></en>
+        </locale>
+
+
+    </groups>
+    <groups name="quiqqer/gallery" datatype="js">
+        <locale name="quiqqer.gallery.slider.noImages">
+<en><![CDATA[This slider has no images assigned.]]></en>
+        </locale>
+    </groups>
+</locales>
