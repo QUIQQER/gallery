@@ -45,40 +45,40 @@
                     <locale group="quiqqer/bricks" var="brick.control.setting.order"/>
 
                     <option value="name ASC">
-                        <locale group="quiqqer/system" var="name_asc"/>
+                        <locale group="quiqqer/core" var="name_asc"/>
                     </option>
                     <option value="name DESC">
-                        <locale group="quiqqer/system" var="name_desc"/>
+                        <locale group="quiqqer/core" var="name_desc"/>
                     </option>
                     <option value="title ASC">
-                        <locale group="quiqqer/system" var="title_asc"/>
+                        <locale group="quiqqer/core" var="title_asc"/>
                     </option>
                     <option value="title DESC">
-                        <locale group="quiqqer/system" var="title_desc"/>
+                        <locale group="quiqqer/core" var="title_desc"/>
                     </option>
                     <option value="c_date ASC">
-                        <locale group="quiqqer/system" var="c_date_asc"/>
+                        <locale group="quiqqer/core" var="c_date_asc"/>
                     </option>
                     <option value="c_date DESC">
-                        <locale group="quiqqer/system" var="c_date_desc"/>
+                        <locale group="quiqqer/core" var="c_date_desc"/>
                     </option>
                     <option value="e_date ASC">
-                        <locale group="quiqqer/system" var="e_date_asc"/>
+                        <locale group="quiqqer/core" var="e_date_asc"/>
                     </option>
                     <option value="e_date DESC">
-                        <locale group="quiqqer/system" var="e_date_desc"/>
+                        <locale group="quiqqer/core" var="e_date_desc"/>
                     </option>
                     <option value="release_from ASC">
-                        <locale group="quiqqer/system" var="release_from_asc"/>
+                        <locale group="quiqqer/core" var="release_from_asc"/>
                     </option>
                     <option value="release_from DESC">
-                        <locale group="quiqqer/system" var="release_from_desc"/>
+                        <locale group="quiqqer/core" var="release_from_desc"/>
                     </option>
                     <option value="priority ASC">
-                        <locale group="quiqqer/system" var="priority_asc"/>
+                        <locale group="quiqqer/core" var="priority_asc"/>
                     </option>
                     <option value="priority DESC">
-                        <locale group="quiqqer/system" var="priority_desc"/>
+                        <locale group="quiqqer/core" var="priority_desc"/>
                     </option>
                 </setting>
             </settings>
@@ -103,40 +103,40 @@
                     <locale group="quiqqer/bricks" var="brick.control.setting.order"/>
 
                     <option value="name ASC">
-                        <locale group="quiqqer/system" var="name_asc"/>
+                        <locale group="quiqqer/core" var="name_asc"/>
                     </option>
                     <option value="name DESC">
-                        <locale group="quiqqer/system" var="name_desc"/>
+                        <locale group="quiqqer/core" var="name_desc"/>
                     </option>
                     <option value="title ASC">
-                        <locale group="quiqqer/system" var="title_asc"/>
+                        <locale group="quiqqer/core" var="title_asc"/>
                     </option>
                     <option value="title DESC">
-                        <locale group="quiqqer/system" var="title_desc"/>
+                        <locale group="quiqqer/core" var="title_desc"/>
                     </option>
                     <option value="c_date ASC">
-                        <locale group="quiqqer/system" var="c_date_asc"/>
+                        <locale group="quiqqer/core" var="c_date_asc"/>
                     </option>
                     <option value="c_date DESC">
-                        <locale group="quiqqer/system" var="c_date_desc"/>
+                        <locale group="quiqqer/core" var="c_date_desc"/>
                     </option>
                     <option value="e_date ASC">
-                        <locale group="quiqqer/system" var="e_date_asc"/>
+                        <locale group="quiqqer/core" var="e_date_asc"/>
                     </option>
                     <option value="e_date DESC">
-                        <locale group="quiqqer/system" var="e_date_desc"/>
+                        <locale group="quiqqer/core" var="e_date_desc"/>
                     </option>
                     <option value="release_from ASC">
-                        <locale group="quiqqer/system" var="release_from_asc"/>
+                        <locale group="quiqqer/core" var="release_from_asc"/>
                     </option>
                     <option value="release_from DESC">
-                        <locale group="quiqqer/system" var="release_from_desc"/>
+                        <locale group="quiqqer/core" var="release_from_desc"/>
                     </option>
                     <option value="priority ASC">
-                        <locale group="quiqqer/system" var="priority_asc"/>
+                        <locale group="quiqqer/core" var="priority_asc"/>
                     </option>
                     <option value="priority DESC">
-                        <locale group="quiqqer/system" var="priority_desc"/>
+                        <locale group="quiqqer/core" var="priority_desc"/>
                     </option>
                 </setting>
             </settings>
@@ -216,40 +216,40 @@
                     <locale group="quiqqer/bricks" var="brick.control.setting.order"/>
 
                     <option value="name ASC">
-                        <locale group="quiqqer/system" var="name_asc"/>
+                        <locale group="quiqqer/core" var="name_asc"/>
                     </option>
                     <option value="name DESC">
-                        <locale group="quiqqer/system" var="name_desc"/>
+                        <locale group="quiqqer/core" var="name_desc"/>
                     </option>
                     <option value="title ASC">
-                        <locale group="quiqqer/system" var="title_asc"/>
+                        <locale group="quiqqer/core" var="title_asc"/>
                     </option>
                     <option value="title DESC">
-                        <locale group="quiqqer/system" var="title_desc"/>
+                        <locale group="quiqqer/core" var="title_desc"/>
                     </option>
                     <option value="c_date ASC">
-                        <locale group="quiqqer/system" var="c_date_asc"/>
+                        <locale group="quiqqer/core" var="c_date_asc"/>
                     </option>
                     <option value="c_date DESC">
-                        <locale group="quiqqer/system" var="c_date_desc"/>
+                        <locale group="quiqqer/core" var="c_date_desc"/>
                     </option>
                     <option value="e_date ASC">
-                        <locale group="quiqqer/system" var="e_date_asc"/>
+                        <locale group="quiqqer/core" var="e_date_asc"/>
                     </option>
                     <option value="e_date DESC">
-                        <locale group="quiqqer/system" var="e_date_desc"/>
+                        <locale group="quiqqer/core" var="e_date_desc"/>
                     </option>
                     <option value="release_from ASC">
-                        <locale group="quiqqer/system" var="release_from_asc"/>
+                        <locale group="quiqqer/core" var="release_from_asc"/>
                     </option>
                     <option value="release_from DESC">
-                        <locale group="quiqqer/system" var="release_from_desc"/>
+                        <locale group="quiqqer/core" var="release_from_desc"/>
                     </option>
                     <option value="priority ASC">
-                        <locale group="quiqqer/system" var="priority_asc"/>
+                        <locale group="quiqqer/core" var="priority_asc"/>
                     </option>
                     <option value="priority DESC">
-                        <locale group="quiqqer/system" var="priority_desc"/>
+                        <locale group="quiqqer/core" var="priority_desc"/>
                     </option>
                 </setting>
             </settings>
@@ -277,40 +277,40 @@
                         <locale group="quiqqer/gallery" var="quiqqer.gridAdvanced.settings.order.random"/>
                     </option>
                     <option value="name ASC">
-                        <locale group="quiqqer/system" var="name_asc"/>
+                        <locale group="quiqqer/core" var="name_asc"/>
                     </option>
                     <option value="name DESC">
-                        <locale group="quiqqer/system" var="name_desc"/>
+                        <locale group="quiqqer/core" var="name_desc"/>
                     </option>
                     <option value="title ASC">
-                        <locale group="quiqqer/system" var="title_asc"/>
+                        <locale group="quiqqer/core" var="title_asc"/>
                     </option>
                     <option value="title DESC">
-                        <locale group="quiqqer/system" var="title_desc"/>
+                        <locale group="quiqqer/core" var="title_desc"/>
                     </option>
                     <option value="c_date ASC">
-                        <locale group="quiqqer/system" var="c_date_asc"/>
+                        <locale group="quiqqer/core" var="c_date_asc"/>
                     </option>
                     <option value="c_date DESC">
-                        <locale group="quiqqer/system" var="c_date_desc"/>
+                        <locale group="quiqqer/core" var="c_date_desc"/>
                     </option>
                     <option value="e_date ASC">
-                        <locale group="quiqqer/system" var="e_date_asc"/>
+                        <locale group="quiqqer/core" var="e_date_asc"/>
                     </option>
                     <option value="e_date DESC">
-                        <locale group="quiqqer/system" var="e_date_desc"/>
+                        <locale group="quiqqer/core" var="e_date_desc"/>
                     </option>
                     <option value="release_from ASC">
-                        <locale group="quiqqer/system" var="release_from_asc"/>
+                        <locale group="quiqqer/core" var="release_from_asc"/>
                     </option>
                     <option value="release_from DESC">
-                        <locale group="quiqqer/system" var="release_from_desc"/>
+                        <locale group="quiqqer/core" var="release_from_desc"/>
                     </option>
                     <option value="priority ASC">
-                        <locale group="quiqqer/system" var="priority_asc"/>
+                        <locale group="quiqqer/core" var="priority_asc"/>
                     </option>
                     <option value="priority DESC">
-                        <locale group="quiqqer/system" var="priority_desc"/>
+                        <locale group="quiqqer/core" var="priority_desc"/>
                     </option>
                 </setting>
 
@@ -487,40 +487,40 @@
                         <locale group="quiqqer/gallery" var="quiqqer.gridAdvanced.settings.order.random"/>
                     </option>
                     <option value="name ASC">
-                        <locale group="quiqqer/system" var="name_asc"/>
+                        <locale group="quiqqer/core" var="name_asc"/>
                     </option>
                     <option value="name DESC">
-                        <locale group="quiqqer/system" var="name_desc"/>
+                        <locale group="quiqqer/core" var="name_desc"/>
                     </option>
                     <option value="title ASC">
-                        <locale group="quiqqer/system" var="title_asc"/>
+                        <locale group="quiqqer/core" var="title_asc"/>
                     </option>
                     <option value="title DESC">
-                        <locale group="quiqqer/system" var="title_desc"/>
+                        <locale group="quiqqer/core" var="title_desc"/>
                     </option>
                     <option value="c_date ASC">
-                        <locale group="quiqqer/system" var="c_date_asc"/>
+                        <locale group="quiqqer/core" var="c_date_asc"/>
                     </option>
                     <option value="c_date DESC">
-                        <locale group="quiqqer/system" var="c_date_desc"/>
+                        <locale group="quiqqer/core" var="c_date_desc"/>
                     </option>
                     <option value="e_date ASC">
-                        <locale group="quiqqer/system" var="e_date_asc"/>
+                        <locale group="quiqqer/core" var="e_date_asc"/>
                     </option>
                     <option value="e_date DESC">
-                        <locale group="quiqqer/system" var="e_date_desc"/>
+                        <locale group="quiqqer/core" var="e_date_desc"/>
                     </option>
                     <option value="release_from ASC">
-                        <locale group="quiqqer/system" var="release_from_asc"/>
+                        <locale group="quiqqer/core" var="release_from_asc"/>
                     </option>
                     <option value="release_from DESC">
-                        <locale group="quiqqer/system" var="release_from_desc"/>
+                        <locale group="quiqqer/core" var="release_from_desc"/>
                     </option>
                     <option value="priority ASC">
-                        <locale group="quiqqer/system" var="priority_asc"/>
+                        <locale group="quiqqer/core" var="priority_asc"/>
                     </option>
                     <option value="priority DESC">
-                        <locale group="quiqqer/system" var="priority_desc"/>
+                        <locale group="quiqqer/core" var="priority_desc"/>
                     </option>
                 </setting>
             </settings>
@@ -563,34 +563,34 @@
                         <locale group="quiqqer/gallery" var="quiqqer.gridAdvanced.settings.order.random"/>
                     </option>
                     <option value="name ASC">
-                        <locale group="quiqqer/system" var="name_asc"/>
+                        <locale group="quiqqer/core" var="name_asc"/>
                     </option>
                     <option value="name DESC">
-                        <locale group="quiqqer/system" var="name_desc"/>
+                        <locale group="quiqqer/core" var="name_desc"/>
                     </option>
                     <option value="title ASC">
-                        <locale group="quiqqer/system" var="title_asc"/>
+                        <locale group="quiqqer/core" var="title_asc"/>
                     </option>
                     <option value="title DESC">
-                        <locale group="quiqqer/system" var="title_desc"/>
+                        <locale group="quiqqer/core" var="title_desc"/>
                     </option>
                     <option value="c_date ASC">
-                        <locale group="quiqqer/system" var="c_date_asc"/>
+                        <locale group="quiqqer/core" var="c_date_asc"/>
                     </option>
                     <option value="c_date DESC">
-                        <locale group="quiqqer/system" var="c_date_desc"/>
+                        <locale group="quiqqer/core" var="c_date_desc"/>
                     </option>
                     <option value="e_date ASC">
-                        <locale group="quiqqer/system" var="e_date_asc"/>
+                        <locale group="quiqqer/core" var="e_date_asc"/>
                     </option>
                     <option value="e_date DESC">
-                        <locale group="quiqqer/system" var="e_date_desc"/>
+                        <locale group="quiqqer/core" var="e_date_desc"/>
                     </option>
                     <option value="priority ASC">
-                        <locale group="quiqqer/system" var="priority_asc"/>
+                        <locale group="quiqqer/core" var="priority_asc"/>
                     </option>
                     <option value="priority DESC">
-                        <locale group="quiqqer/system" var="priority_desc"/>
+                        <locale group="quiqqer/core" var="priority_desc"/>
                     </option>
                 </setting>
 
@@ -680,34 +680,34 @@
                         <locale group="quiqqer/gallery" var="quiqqer.gridAdvanced.settings.order.random"/>
                     </option>
                     <option value="name ASC">
-                        <locale group="quiqqer/system" var="name_asc"/>
+                        <locale group="quiqqer/core" var="name_asc"/>
                     </option>
                     <option value="name DESC">
-                        <locale group="quiqqer/system" var="name_desc"/>
+                        <locale group="quiqqer/core" var="name_desc"/>
                     </option>
                     <option value="title ASC">
-                        <locale group="quiqqer/system" var="title_asc"/>
+                        <locale group="quiqqer/core" var="title_asc"/>
                     </option>
                     <option value="title DESC">
-                        <locale group="quiqqer/system" var="title_desc"/>
+                        <locale group="quiqqer/core" var="title_desc"/>
                     </option>
                     <option value="c_date ASC">
-                        <locale group="quiqqer/system" var="c_date_asc"/>
+                        <locale group="quiqqer/core" var="c_date_asc"/>
                     </option>
                     <option value="c_date DESC">
-                        <locale group="quiqqer/system" var="c_date_desc"/>
+                        <locale group="quiqqer/core" var="c_date_desc"/>
                     </option>
                     <option value="e_date ASC">
-                        <locale group="quiqqer/system" var="e_date_asc"/>
+                        <locale group="quiqqer/core" var="e_date_asc"/>
                     </option>
                     <option value="e_date DESC">
-                        <locale group="quiqqer/system" var="e_date_desc"/>
+                        <locale group="quiqqer/core" var="e_date_desc"/>
                     </option>
                     <option value="priority ASC">
-                        <locale group="quiqqer/system" var="priority_asc"/>
+                        <locale group="quiqqer/core" var="priority_asc"/>
                     </option>
                     <option value="priority DESC">
-                        <locale group="quiqqer/system" var="priority_desc"/>
+                        <locale group="quiqqer/core" var="priority_desc"/>
                     </option>
                 </setting>
 
